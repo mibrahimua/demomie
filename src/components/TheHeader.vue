@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <router-link to="{name: 'home}" class="navbar-brand">
+      <router-link :to="{name: 'home'}" class="navbar-brand">
         conduit
       </router-link>
       <ul v-if="!isAuthenticated" class="nav navbar-nav pull-xs-right">
@@ -77,7 +77,7 @@ import {mapGetters} from "vuex";
 export default {
   name: "RwvHeader",
   computed: {
-    ...mapGetters("currentUser", "isAuthenticated")
+    ...mapGetters(["currentUser", "isAuthenticated"])
   }
 }
 </script>
